@@ -16,7 +16,7 @@ def generate_launch_description():
     # Launch gazebo. ( Use the launch file in "husky_gazebo" )
     launch_husky_gazebo = IncludeLaunchDescription(
         PathJoinSubstitution(
-            [FindPackageShare("husky_gazebo"), "launch", "husky_playpen.launch.py"]
+            [FindPackageShare("husky_gazebo"), "launch", "husky_fre21_task2.launch.py"]
         )
     )
 
@@ -49,8 +49,8 @@ def generate_launch_description():
 
     ld = LaunchDescription(ARGUMENTS)
     ld.add_action(launch_husky_gazebo)
-    ld.add_action(launch_slam_toolbox)
-    ld.add_action(launch_nav2_bringup)
+    # ld.add_action(launch_slam_toolbox)
+    # ld.add_action(launch_nav2_bringup)
     ld.add_action(launch_husky_viz)
 
     return ld
